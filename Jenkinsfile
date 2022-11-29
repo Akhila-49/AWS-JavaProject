@@ -1,4 +1,6 @@
 pipeline {
+    agent any
+    stages{
     stage('SCM') {
      git branch: 'main', url: 'https://github.com/skatta3/AWS-JavaProject.git' 
     }
@@ -13,5 +15,6 @@ pipeline {
     archiveArtifacts artifacts: 'target\\messageUtil-1.0.jar', followSymlinks: false    
     }
    }
+    }
     
 }
